@@ -24,12 +24,8 @@ def xavier_weight_init():
       out: tf.Tensor of specified shape sampled from Xavier distribution.
     """
     ### YOUR CODE HERE
-    m = shape[0]
-    try:
-      n = shape[1]
-    except:
-      n = 1
-    eps = np.sqrt(6)/np.sqrt(m+n)
+    dim_sum = shape.sum()
+    eps = np.sqrt(6)/np.sqrt(dim_sum)
     out = tf.random_uniform(shape, minval=-eps, maxval=eps)
     ### END YOUR CODE
     return out
