@@ -25,6 +25,8 @@ def xavier_weight_init():
     """
     ### YOUR CODE HERE
     dim_sum = shape.sum()
+    if len(shape)==1:
+      dim_sum += 1
     eps = np.sqrt(6)/np.sqrt(dim_sum)
     out = tf.random_uniform(shape, minval=-eps, maxval=eps)
     ### END YOUR CODE
